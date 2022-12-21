@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-"""A Module that create a Square object"""
+''' A Module that create a Square object '''
 
 class Square:
-    """Creates an Object template"""
+    ''' Creates an Object template '''
 
     def __init__(self, size=0):
         '''Initializes the class instance
+
         @self:
-            a parameter used to refer to the class instance
+            A parameter used to refer to the class instance
+
         @size:
             The size of square, must be +ve integer
         '''
