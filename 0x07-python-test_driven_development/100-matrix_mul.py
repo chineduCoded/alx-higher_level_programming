@@ -7,18 +7,19 @@ def matrix_mul(m_a, m_b):
     Multiply two matrices m_a and m_b.
 
     Parameters:
-    m_a (list of lists): First matrix to be multiplied, with dimensions (p, q).
-    m_b (list of lists): Second matrix to be multiplied, with dimensions (q, r).
+    m_a (list of lists): First matrix to be multiplied
+    m_b (list of lists): Second matrix to be multiplied
 
     Returns:
     list of lists: The product matrix, with dimensions (p, r).
 
     Raises:
-    TypeError: If m_a or m_b is not a list, or if m_a or m_b is not a list of lists,
-        or if one element of m_a or m_b is not an integer or a float, or if m_a or m_b
-        is not a rectangle (i.e., if not all rows have the same size).
-    ValueError: If m_a or m_b is empty (i.e., if it is equal to [] or [[]]), or if m_a and m_b
-        can't be multiplied (i.e., if the number of columns of m_a is not equal to the number of rows of m_b).
+        TypeError: If either m_a or m_b is not a list of lists of ints/floats.
+        TypeError: If either m_a or m_b is empty.
+        TypeError: If either m_a or m_b has different-sized rows.
+        ValueError: If m_a and m_b cannot be multiplied.
+    Returns:
+        A new matrix representing the multiplication of m_a by m_b.
     """
     # Validate m_a and m_b
     if not isinstance(m_a, list):
