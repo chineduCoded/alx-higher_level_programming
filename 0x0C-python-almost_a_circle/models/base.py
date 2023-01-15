@@ -61,3 +61,31 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, "w") as f:
             f.write(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns an instance with all attributes already set
+        :param dictionary: key/value arguments to set the attributes of the instance.
+        :return: an instance of the class with the attributes set
+        """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances
+        :return: list of instances
+        """
+        try:
+            with open(cls.__name__ + ".json", "r") as f:
+                json_string = f.read()
+        except:
+            return []
+        list_dictionaries = cls.from_json_string(json_string)
+        return [cls.create(**dic) for dic in list_dictionaries]
