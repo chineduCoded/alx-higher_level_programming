@@ -28,11 +28,24 @@ class Base:
         Returns the JSON string representation of list_dictionaries
         args:
             list_dictionaries: list of dictionaries
+        :return: JSON string representation of list_dictionaries
         """
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns the list of the JSON string representation json_string
+        :param json_string: a string representing a list of dictionaries
+        :return: list represented by json_string
+        """
+        if json_string is None or not json_string:
+            return []
+        else:
+            return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
