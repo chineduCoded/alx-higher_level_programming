@@ -12,8 +12,6 @@
    which the js engine runs.
 
    so process.argv[2] ... contains users passed in arguments.
-
-   Author: Sammykingx
 */
 const value = process.argv[2];
 if (value === undefined) {
