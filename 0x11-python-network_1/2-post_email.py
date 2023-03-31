@@ -15,7 +15,7 @@ def send_post_request(url, email):
         email(str): to receive POST request
     Returns: Decoded email
     """
-    data = urllib.parse.urlencode({'email': email}).encode('utf-8')
+    data = urllib.parse.urlencode({'email': email}).encode('utf8')
     with urllib.request.urlopen(url, data) as res:
         output = res.read().decode("utf-8")
         print(output)
@@ -26,6 +26,6 @@ if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
 
-    print("Your email is: " + email)
+    print(f"Your email is: {email}")
 
     send_post_request(url, email)
